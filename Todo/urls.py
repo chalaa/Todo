@@ -17,11 +17,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Todo import views
+from rest_framework import routers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todo/', views.todo_list),
-    path('todo/<int:id>', views.todo_detail),
-    path('task/', views.task_list),
-    path('task/<int:id>',views.task_detail)
+    
+    # path('todo/', views.todo_list),
+    # path('todo/<int:id>', views.todo_detail),
+    # path('task/', views.task_list),
+    # path('task/<int:id>',views.task_detail)
 ]
+
+
+router = routers.SimpleRouter()
+router.register(r'todos', views.TodoViewSet)
+router.register(r'tasks', views.TaskViewSet)
+urlpatterns = router.urls

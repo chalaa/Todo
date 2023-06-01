@@ -6,6 +6,7 @@ class TaskSerializer(serializers.ModelSerializer):
         model= Task
         fields = ['id','todo','task_title','task_description','task_status']
 
+
 class TodoTaskSerializer(serializers.ModelSerializer):
     class Meta:
         model= Task
