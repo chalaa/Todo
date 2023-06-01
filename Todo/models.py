@@ -7,9 +7,9 @@ class Todo(models.Model):
 
 
 class Task(models.Model):
-    todo= models.ForeignKey("Todo.Todo", on_delete=models.CASCADE)
+    todo= models.ForeignKey('Todo.Todo', on_delete=models.CASCADE)
     task_title = models.CharField(max_length=255)
     task_status = models.CharField(max_length=255)
-    task_description = models.TextField(max_length=500)
+    task_description = models.TextField(max_length=5000)
 
 
